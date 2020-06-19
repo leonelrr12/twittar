@@ -11,7 +11,7 @@ import (
 /*InsertRegistro Funcion para el Ingreso de los Usuarios a la BD*/
 func InsertRegistro(u models.Usuario) (string, bool, error) {
 
-	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 35*time.Second)
 	defer cancel()
 
 	db := MongoCnn.Database("twittar")
