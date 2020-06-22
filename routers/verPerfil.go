@@ -2,6 +2,7 @@ package routers
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 
 	"github.com/leonelrr12/twittar/bd"
@@ -9,10 +10,13 @@ import (
 
 /*VerPerfil Permite extraer los valores del Perfil*/
 func VerPerfil(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("content-type", "application/json")
 
 	ID := r.URL.Query().Get("id")
+	log.Printf(ID)
+
 	if len(ID) < 1 {
-		http.Error(w, "Debe envisr el parametro ID", http.StatusBadRequest)
+		http.Error(w, "Debe envisr el parametro ID.", http.StatusBadRequest)
 		return
 	}
 
@@ -22,7 +26,7 @@ func VerPerfil(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("context-type", "application/json")
-	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Context-type", "application/json")
+	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(perfil)
 }
