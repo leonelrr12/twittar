@@ -22,6 +22,7 @@ func InsertTweet(t models.Tweet) (string, bool, error) {
 		"mensaje": t.Mensaje,
 		"fecha":   t.Fecha,
 	}
+
 	result, err := col.InsertOne(ctx, registro)
 	if err != nil {
 		return "", false, err

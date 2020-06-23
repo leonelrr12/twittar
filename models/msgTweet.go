@@ -1,6 +1,6 @@
 package models
 
-/*msgTweet es el modelo para los Tweets en la DB*/
-type msgTweet struct {
+/*MsgTweet es el modelo para los Tweets en la DB*/
+type MsgTweet struct {
 	Mensaje string `bson:"mensaje" json:"mensaje,omitempty"`
 }
