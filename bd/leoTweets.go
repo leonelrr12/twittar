@@ -16,7 +16,7 @@ func LeoTweets(ID string, pagina int64) ([]*models.DevuelvoTweets, bool) {
 	defer cancel()
 
 	db := MongoCnn.Database("twittar")
-	col := db.Collection("usuarios")
+	col := db.Collection("tweets")
 
 	var resultados []*models.DevuelvoTweets
 
