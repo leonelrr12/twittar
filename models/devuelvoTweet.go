@@ -8,7 +8,7 @@ import (
 
 /*DevuelvoTweets Modelo para extraer los Tweets*/
 type DevuelvoTweets struct {
-	ID      primitive.ObjectID `bson:"_id" json:"_id,omitempty"`
+	ID      primitive.ObjectID `bson:"_id" json:"id,omitempty"`
 	UserID  string             `bson:"userID" json:"userID,omitempty"`
 	Mensaje string             `bson:"mensaje" json:"mensaje,omitempty"`
 	Fecha   time.Time          `bson:"fecha" json:"fecha,omitempty"`

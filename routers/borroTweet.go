@@ -23,6 +23,7 @@ func BorroTweet(w http.ResponseWriter, r *http.Request) {
 	}
 
 	log.Println(ID, "Tweet borrado satisfactoriamente.")
+	
 	w.Header().Set("Content-type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 }

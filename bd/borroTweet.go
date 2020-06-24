@@ -2,6 +2,8 @@ package bd
 
 import (
 	"context"
+	"errors"
+	"log"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -23,6 +25,11 @@ func BorroTweet(ID string, UserID string) error {
 		"userid": UserID,
 	}
 
-	_, err := col.DeleteOne(ctx, cond)
+	res, err := col.DeleteOne(ctx, cond)
+	if res.DeletedCount == 0 {
+		log.Println("DeleteOne() document not found:", res)
+		return errors.New("no se han eliminado registros")
+	}
+
 	return err
 }
