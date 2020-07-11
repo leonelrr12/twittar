@@ -2,7 +2,6 @@ package bd
 
 import (
 	"context"
-	"log"
 	"time"
 
 	"github.com/leonelrr12/twittar/models"
@@ -19,15 +18,13 @@ func ConsultoRelacion(t models.Relacion) (bool, error) {
 	col := db.Collection("relacion")
 
 	cond := bson.M{
-		"usuarioid":          t.UsuarioID,
-		"usuariorrelacionid": t.UsuarioRelacionID,
+		"usuarioId":         t.UsuarioID,
+		"usuariorelacionid": t.UsuarioRelacionID,
 	}
-	log.Println("cond: ", cond)
 
 	var resultado models.Relacion
 	err := col.FindOne(ctx, cond).Decode(&resultado)
 	if err != nil {
-		log.Println(err.Error())
 		return false, err
 	}
 

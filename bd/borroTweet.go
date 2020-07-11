@@ -22,7 +22,7 @@ func BorroTweet(ID string, UserID string) error {
 
 	cond := bson.M{
 		"_id":    objID,
-		"userid": UserID,
+		"userId": UserID,
 	}
 
 	res, err := col.DeleteOne(ctx, cond)

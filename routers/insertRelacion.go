@@ -15,7 +15,7 @@ func InsertRelacion(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "El parametro ID es obligatorio.", http.StatusBadRequest)
 		return
 	}
-
+ 
 	var t models.Relacion
 	t.UsuarioID = IDUsuario
 	t.UsuarioRelacionID = ID

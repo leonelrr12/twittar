@@ -33,7 +33,7 @@ func ConsultoRelacion(w http.ResponseWriter, r *http.Request) {
 		//resp = map[string]bool{"status": true}
 	}
 
-	w.Header().Set("Context-type", "application/json")
+	w.Header().Set("Context-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(resp)
 }

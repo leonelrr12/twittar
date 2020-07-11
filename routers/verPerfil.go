@@ -2,7 +2,6 @@ package routers
 
 import (
 	"encoding/json"
-	"log"
 	"net/http"
 
 	"github.com/leonelrr12/twittar/bd"
@@ -13,10 +12,9 @@ func VerPerfil(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("content-type", "application/json")
 
 	ID := r.URL.Query().Get("id")
-	log.Printf(ID)
 
 	if len(ID) < 1 {
-		http.Error(w, "Debe envisr el parametro ID.", http.StatusBadRequest)
+		http.Error(w, "Debe enviar el parametro ID.", http.StatusBadRequest)
 		return
 	}
 

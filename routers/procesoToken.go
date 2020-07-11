@@ -2,7 +2,6 @@ package routers
 
 import (
 	"errors"
-	"log"
 	"strings"
 
 	jwt "github.com/dgrijalva/jwt-go"
@@ -46,6 +45,5 @@ func ProcesoToken(tk string) (*models.Claim, bool, string, error) {
 		IDUsuario = ID
 	}
 
-	log.Println("ProcesoToken->IDUsuario: ", IDUsuario)
 	return claims, encontrado, IDUsuario, nil
 }
